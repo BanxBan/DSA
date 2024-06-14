@@ -1,23 +1,24 @@
 #ifndef STACK_ARRAY_H
 #define STACK_ARRAY_H
-
+#include "StackArray.h"
+d 
 #include <stdbool.h>
 
 #define MAX 1
 #define TOP -1
 
-typedef struct {
-    int data[MAX];
-    int top;
-} StackArrayList;
-
-// Function declarations
-void initStack(StackArrayList *L);
-StackArrayList createStack();
-bool stack_push(StackArrayList *s, int elem);
-bool stack_pop(StackArrayList *s);
-void display(StackArrayList s);
-void visualize(StackArrayList s);
+int main() {
+    StackArrayList stack = createStack();
+    stack_push(&stack, 10);
+    stack_push(&stack, 20);
+    stack_push(&stack, 30);
+    display(stack);
+    visualize(stack);
+    stack_pop(&stack);
+    display(stack);
+    visualize(stack);
+    return 0;
+}
 
 #endif /* STACK_ARRAY_H */
 

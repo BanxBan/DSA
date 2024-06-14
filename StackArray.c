@@ -52,12 +52,13 @@ bool stack_pop(StackArrayList *s) {
 
 // Function to display the elements of the stack
 void display(StackArrayList s) {
+    int i; // Declare loop variable here
     if (isEmpty(s)) {
         printf("Stack is empty\n");
         return;
     }
     printf("Stack elements: ");
-    for (int i = 0; i <= s.top; i++) {
+    for (i = 0; i <= s.top; i++) {
         printf("%d ", s.data[i]);
     }
     printf("\n");
@@ -67,22 +68,11 @@ void display(StackArrayList s) {
 void visualize(StackArrayList s) {
     printf("Stack Visualization:\n");
     printf("Top of Stack\n");
-    for (int i = s.top; i >= 0; i--) {
+    int i; // Declare loop variable here
+    for (i = s.top; i >= 0; i--) {
         printf("| %d |\n", s.data[i]);
     }
     printf("Bottom of Stack\n");
 }
 
-int main() {
-    StackArrayList stack = createStack();
-    stack_push(&stack, 10);
-    stack_push(&stack, 20);
-    stack_push(&stack, 30);
-    display(stack);
-    visualize(stack);
-    stack_pop(&stack);
-    display(stack);
-    visualize(stack);
-    return 0;
-}
 
